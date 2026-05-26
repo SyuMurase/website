@@ -1,147 +1,39 @@
-# Personal Archive Site (23歳の人生アーカイブ)
+# Personal Archive Site (HTML版)
 
-このリポジトリは、**公開ポートフォリオではなく**、
-23歳時点の思考・迷い・記憶を自分のために保存する個人サイトです。
+23歳時点の自分の記憶・迷い・価値観を残す、個人用アーカイブサイトです。
 
-- Framework: Next.js 14 (App Router)
-- Language: TypeScript
-- Styling: Tailwind CSS
-- Animation: Framer Motion
+## 起動方法
 
----
+この版は **プレーンHTML** で作成しています。
+ビルドは不要です。
 
-## 1. 前提環境
-
-以下がインストールされていることを確認してください。
-
-- **Node.js 20 以上推奨**
-- **npm 10 以上推奨**
-
-確認コマンド:
-
-```bash
-node -v
-npm -v
-```
-
----
-
-## 2. セットアップ手順（起動まで）
-
-### 2-1. リポジトリに移動
+### 1) リポジトリへ移動
 
 ```bash
 cd /workspace/website
 ```
 
-### 2-2. 依存関係をインストール
+### 2) ローカルサーバーを起動（どちらか1つ）
 
 ```bash
-npm install
+python3 -m http.server 3000
 ```
 
-### 2-3. 開発サーバーを起動
+または
 
 ```bash
-npm run dev
+npx serve . -l 3000
 ```
 
-起動後、ブラウザで以下を開きます。
+### 3) ブラウザで開く
 
-- http://localhost:3000
+- http://localhost:3000/index.html
 
----
+## ファイル構成
 
-## 3. よく使うコマンド
+- `index.html`: サイト本体（タブ・各章・スタイル・アニメーションを内包）
 
-### 開発サーバー
+## 補足
 
-```bash
-npm run dev
-```
-
-### 型チェック
-
-```bash
-npx tsc --noEmit
-```
-
-### 本番ビルド
-
-```bash
-npm run build
-```
-
-### 本番サーバー起動（build後）
-
-```bash
-npm run start
-```
-
----
-
-## 4. ディレクトリ構成（主要ファイル）
-
-```text
-app/
-  layout.tsx        # ルートレイアウト
-  page.tsx          # 6章構成のメインページ
-  globals.css       # 全体スタイル
-components/
-  HeaderTabs.tsx    # 上部固定タブ
-  SectionWrapper.tsx
-  MemoryCard.tsx
-  ThoughtCard.tsx
-  FuturePanel.tsx
-data/
-  sections.ts       # 章・カード本文のデータ定義
-```
-
----
-
-## 5. カスタマイズ方法
-
-本文を編集したい場合は、主に `data/sections.ts` を変更してください。
-
-- 章タイトル・リード文: `sections`
-- University/Hackathon/Hotel: `universityCards`, `hackathonCards`, `hotelCards`
-- Thoughts: `thoughtCards`
-- Future: `futurePanels`
-
-レイアウトや見た目を変えたい場合は、以下を編集します。
-
-- セクション共通UI: `components/SectionWrapper.tsx`
-- タブ挙動: `components/HeaderTabs.tsx`
-- 全体トーン: `app/globals.css`
-
----
-
-## 6. トラブルシューティング
-
-### `npm install` で失敗する
-
-ネットワーク制限やレジストリアクセス制限で失敗する場合があります。
-その場合は、接続可能な環境で以下を再実行してください。
-
-```bash
-npm install
-```
-
-### ポート3000が使用中
-
-別ポートで起動:
-
-```bash
-npm run dev -- -p 3001
-```
-
----
-
-## 7. このサイトのコンセプト
-
-- 成果よりも過程
-- 実績よりも記憶
-- 見栄えよりも主張
-
-未来の自分が読み返したときに、
-「23歳の時、何を考えていたか」が伝わることを最優先にしています。
+- 上部タブは常時表示され、章ごとにスムーズ移動します。
+- スクロール位置に応じてアクティブタブが切り替わります。

@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>23歳の人生アーカイブ</title>
+    <style>
+      :root {
+        --bg: #0a0a0a;
+        --text: #eaeaea;
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: "Inter", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.8;
+      }
+      .tabs {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        backdrop-filter: blur(8px);
+        background: rgba(10, 10, 10, 0.8);
+        border-bottom: 1px solid rgba(255,255,255,.1);
+      }
+      .tab-list {
+        margin: 0 auto;
+        max-width: 1000px;
+        padding: 10px 14px;
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+      }
+      .tab {
+        color: #aaa;
+        text-decoration: none;
+        padding: 8px 14px;
+        border-radius: 999px;
+        font-size: 14px;
+        white-space: nowrap;
+        transition: .2s;
+      }
+      .tab.active { background: rgba(255,255,255,.16); color: #fff; }
+      section {
+        min-height: 100vh;
+        padding: 72px 18px;
+      }
+      .container { max-width: 980px; margin: 0 auto; }
+      h2 { margin: 0 0 10px; font-size: 34px; }
+      .subtitle { text-transform: uppercase; letter-spacing: .2em; opacity: .7; font-size: 12px; }
+      .lead { max-width: 760px; opacity: .9; margin: 0 0 24px; }
+      .grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); }
+      .card {
+        border: 1px solid rgba(255,255,255,.18);
+        border-radius: 16px;
+        padding: 16px 18px;
+        background: rgba(255,255,255,.04);
+      }
+      .card h3 { margin: 0 0 10px; font-size: 18px; }
+
+      #home { background: #fff; color: #222; }
+      #home .lead, #home p, #home li { color: #333; }
+
+      #university { background: linear-gradient(#f1f3f5, #fff); color: #222; }
+      #university .card { background: rgba(255,255,255,.85); border-color: #d8dde2; }
+
+      #hackathon { background: linear-gradient(#0b1023, #111827); color: #dbe3ff; }
+      #hackathon .log { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; }
+
+      #hotel { background: linear-gradient(#1d1612,#120f0d); color: #ffe9cc; }
+      #hotel .card { background: rgba(255, 189, 118, 0.08); border-color: rgba(255, 211, 163, .32); }
+
+      #thoughts { background: #f7f4ef; color: #3f362d; }
+      #thoughts .card { background: rgba(255,255,255,.8); border-color: #d9ccbd; }
+      .tag { display:inline-block; font-size:12px; padding:3px 10px; border-radius:999px; background:#efe4d8; margin-bottom:8px; }
+
+      #future { background: linear-gradient(#030711,#071325,#040910); color: #d5f6ff; }
+      #future .card { box-shadow: 0 0 0 1px rgba(34,211,238,.25), 0 0 28px rgba(59,130,246,.2); }
+
+      @media (max-width: 640px) { h2{font-size:28px} }
+    </style>
+  </head>
+  <body>
+    <header class="tabs">
+      <nav class="tab-list">
+        <a class="tab" href="#home">Home</a>
+        <a class="tab" href="#university">University</a>
+        <a class="tab" href="#hackathon">Hackathon</a>
+        <a class="tab" href="#hotel">Hotel</a>
+        <a class="tab" href="#thoughts">Thoughts</a>
+        <a class="tab" href="#future">Future</a>
+      </nav>
+    </header>
+
+    <section id="home"><div class="container"><p class="subtitle">現在地</p><h2>Home</h2><p class="lead">23歳の自分を、未来の自分のために保存する場所。</p><p>Murase Takashi / age 23 / university student / Osaka, Japan</p><p>これは、23歳になった自分を保存するための個人的なホームページです。誰かに見せるためではなく、今の自分が何を考え、何に迷い、何を大切にしていたのかを残すために作っています。</p></div></section>
+
+    <section id="university"><div class="container"><p class="subtitle">大学編</p><h2>University</h2><p class="lead">研究の進捗だけでなく、迷いと再定義の連続も残す章。</p><div class="grid"><article class="card"><h3>Research Theme</h3><p>色・奥行き・意味・位置が矛盾するとき、脳がどう整合を取り直すのかに惹かれている。</p></article><article class="card"><h3>Laboratory</h3><p>神経情報システム研究室で、認知と情報処理の接点を学ぶ。問いを作り直す日が多い。</p></article><article class="card"><h3>Struggle</h3><p>進捗が見えない焦りと、理解できた瞬間の小さな喜びが同居していた。</p></article><article class="card"><h3>Why Cognition Matters</h3><p>人間の情報処理を知ることは、ITと対人支援の両方に通じると感じる。</p></article></div></div></section>
+
+    <section id="hackathon"><div class="container"><p class="subtitle">ハッカソン編</p><h2>Hackathon</h2><p class="lead">熱量に触れ、未熟さを直視した深夜の記録。</p><article class="card log"><p>02:14 AM // bug still alive</p><p>Discord call connected</p><p>prototype submitted</p><p>I wanted to contribute more</p></article><div class="grid"><article class="card"><h3>Team Development</h3><p>初対面チームでの開発は、技術以上に前提共有が難しかった。</p></article><article class="card"><h3>What I Could Not Do</h3><p>思ったほど貢献できなかった悔しさが残った。</p></article><article class="card"><h3>What I Learned</h3><p>失敗時に原因を切り分ける姿勢と、フェイルファストの重要性を知った。</p></article></div></div></section>
+
+    <section id="hotel"><div class="container"><p class="subtitle">ホテル編</p><h2>Hotel</h2><p class="lead">接客の静けさの中で、人と向き合う力を覚えた記録。</p><div class="grid"><article class="card"><h3>Front Desk</h3><p>荷物、伝票、案内、代筆。マニュアル通りにいかない対応の連続だった。</p></article><article class="card"><h3>English and Guests</h3><p>海外のお客様対応、とくに医療英語の難しさで悔しさを経験した。</p></article><article class="card"><h3>Being Trusted</h3><p>一人勤務の中で「任せられる」と言ってもらえたことが支えになった。</p></article></div></div></section>
+
+    <section id="thoughts"><div class="container"><p class="subtitle">思考ログ</p><h2>Thoughts</h2><p class="lead">答えではなく、今の判断軸を置いておくためのメモ。</p><div class="grid"><article class="card"><span class="tag">About People</span><p>相手が笑ったり安心したりする瞬間に喜びを感じる。</p></article><article class="card"><span class="tag">About Anxiety</span><p>発言を後で振り返るのは、自分を責めるためではなく改善のため。</p></article><article class="card"><span class="tag">About Growth</span><p>未完成でも挑戦する環境に身を置くことを大切にしたい。</p></article></div></div></section>
+
+    <section id="future"><div class="container"><p class="subtitle">未来編</p><h2>Future</h2><p class="lead">派手さより、長く信頼される状態へ向かうロードマップ。</p><div class="grid"><article class="card"><h3>2026-2027: Build Foundation</h3><p>社会人基礎と技術理解、顧客対応を積み上げる。</p></article><article class="card"><h3>2028: Expand Role</h3><p>SE経験を増やし、技術を相手の言葉で伝える力を磨く。</p></article><article class="card"><h3>2029-2030: Trusted Professional</h3><p>「村瀬なら任せられる」と言われる再現性を作る。生活の余白も育てる。</p></article></div></div></section>
+
+    <script>
+      const tabs = [...document.querySelectorAll('.tab')];
+      const sections = [...document.querySelectorAll('section')];
+      const activate = (id) => tabs.forEach(t => t.classList.toggle('active', t.getAttribute('href') === '#' + id));
+      const observer = new IntersectionObserver((entries) => {
+        const v = entries.filter(e => e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];
+        if (v) activate(v.target.id);
+      }, { rootMargin: '-35% 0px -45% 0px', threshold:[0.2,0.5,0.8] });
+      sections.forEach(s => observer.observe(s));
+      activate('home');
+    </script>
+  </body>
+</html>
